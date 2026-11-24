@@ -8,7 +8,8 @@ Route::get('/', function () {
 
 Route::prefix('evidencias')->name('evidencias.')->group(function () {
     Route::get('/', function () { 
-        return 'Listado de evidencias'; 
+        return view('evidencias.index', ['evidencias' => config('eportfolio.evidencias')]); 
+        #return 'Listado de evidencias'; 
         })->name('index');
 
     Route::get('show/{id}', function ($id) { 
